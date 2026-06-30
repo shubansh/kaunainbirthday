@@ -45,23 +45,23 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="py-24 relative z-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="gallery" className="pt-32 pb-24 relative z-10">
+      <div className="w-[90%] max-w-7xl mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-center mb-16"
+          className="text-center mb-20 relative z-20"
         >
-          <h2 className="font-great-vibes text-5xl md:text-7xl text-brand-rose-gold mb-4">
+          <h2 className="font-great-vibes text-5xl md:text-7xl text-brand-rose-gold mb-6 leading-tight pb-2">
             Memories We Cherish
           </h2>
           <p className="font-inter text-brand-subtext text-lg">Every picture tells a beautiful story.</p>
         </motion.div>
 
         {/* Masonry Layout Approximation using Columns */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 md:gap-8 space-y-6 md:space-y-8">
           {CONFIG.gallery.map((img, idx) => (
             <motion.div
               key={img.id}
@@ -69,24 +69,25 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.8, delay: (idx % 3) * 0.15 }}
-              className={`relative rounded-[20px] overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(255,255,255,0.8)] border-[4px] border-white transition-all duration-700 break-inside-avoid ${img.height}`}
+              className={`relative rounded-3xl overflow-hidden group cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15),0_0_20px_rgba(255,255,255,0.4)] border-[1px] border-white/60 ring-1 ring-black/5 hover:-translate-y-2 hover:scale-[1.03] transition-all duration-[400ms] ease-out break-inside-avoid ${img.height}`}
               onClick={() => setSelectedIndex(idx)}
             >
               <GlassImage 
                 src={img.src} 
                 alt={img.caption} 
                 fill
-                containerClassName="absolute inset-0 w-full h-full"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                containerClassName="absolute inset-0 w-full h-full bg-transparent border-none"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-[600ms] ease-out" 
               />
               
               {/* Blur Overlay */}
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-[400ms]" />
               
               {/* Glass Caption */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-75">
-                <ZoomIn className="w-10 h-10 text-brand-text mb-3 drop-shadow-md" />
-                <div className="px-6 py-2 rounded-full bg-white/80 backdrop-blur-md border border-white/50 text-brand-text font-playfair text-base tracking-wide shadow-lg">
+              <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-[400ms] delay-75 group-hover:translate-y-0 translate-y-4">
+                <ZoomIn className="w-10 h-10 text-white mb-3 drop-shadow-lg" />
+                <div className="px-6 py-2 rounded-full bg-white/30 backdrop-blur-md border border-white/40 text-white font-playfair text-base tracking-wide shadow-xl">
                   {img.caption}
                 </div>
               </div>
