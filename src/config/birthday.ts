@@ -77,9 +77,12 @@ export const CONFIG = {
   family: [
     { name: "Mom", message: "You are my greatest blessing. I love you endlessly, my beautiful girl.", image: "/images/family/mom.jpg", relation: "Mother" },
     { name: "Dad", message: "Always stay happy and keep shining like the star you are. So proud of you.", image: "/images/family/dad.jpg", relation: "Father" },
-    { name: "Brother", message: "My partner in crime and my best friend. Happy birthday!", image: "/images/family/aunt.jpg", relation: "Aunt" },
+    { name: "Sumaiya Aunt", message: "My partner in crime and my best friend. Happy birthday!", image: "/images/family/aunt.jpg", relation: "Aunt" },
     { name: "Sister", message: "To the most amazing sister. May all your dreams come true.", image: "/images/family/sister.jpg", relation: "Sister" },
-    { name: "Grandparents", message: "May God bless you with a beautiful, long, and healthy life ahead.", image: "/images/family/grandparents.jpg", relation: "Grandparents" },
+    { name: "Sufiya Aunt", message: "May God bless you with a beautiful, long, and healthy life ahead.", image: "/images/family/family2.jpg", relation: "Aunt" },
+    { name: "Nani Nanu", message: "May God bless you with a beautiful, long, and healthy life ahead.", image: "/images/family/grandparents.jpg", relation: "Nani Nanu" },
+    { name: "Dada Dadi", message: "May God bless you with a beautiful, long, and healthy life ahead.", image: "/images/family/dada-dadi.jpg", relation: "Dada dadi" },
+    { name: "Uncle", message: "May God bless you with a beautiful, long, and healthy life ahead.", image: "/images/family/mamu.jpg", relation: "Uncle" },
   ],
 
   // Final Letter Section
